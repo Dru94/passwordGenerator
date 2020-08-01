@@ -2,7 +2,8 @@ const charAmountRange = document.getElementById('characterAmountRange')
 const charAmountNumber = document.getElementById('characterAmountNumber')
 const form = document.getElementById('passwordGeneratorForm')
 const display = document.getElementById('passwordDisplay')
-const passLen = charAmountNumber.value
+const passLength = charAmountNumber.value
+	
 
 // syncing charAmountRange input value with charAmountNumber input value
 charAmountNumber.addEventListener('input', synccharAmount)
@@ -18,15 +19,15 @@ function synccharAmount(e){
 
 // listener for submit event 
 form.addEventListener('submit', e =>{
-	e.preventDefault()
+	e.preventDefault();
 
-	display.innerText = generatePassword(passLen);
+	display.innerText = generatePassword(passLength);
 
 })
 
 // generate password
 function generatePassword(p){
-	let word = ''
+	let word = '';
 
 	for(i = word.length; i<p; i++){
 
@@ -36,7 +37,7 @@ function generatePassword(p){
 		word += generateUCase();
 	}
 
-	return word.substring(0, passLen);
+	return word.substring(0, passLength);
 
 }
 
