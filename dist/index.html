@@ -9,21 +9,24 @@
   <title>Password Generator</title>
 </head>
 <body>
-  <div class=" container">
-  	<div class="card">
-  		<div class="card-body">
-  			<h3 class="password-display" id="passwordDisplay">password</h3>
-		    <form id="passwordGeneratorForm" class="form">
-		      <label for="characterAmountNumber">Password Length:</label>
-		      <div class="character-amount-container">
-		        <input type="range" min="8" max="50" value="10" id="characterAmountRange">
-		        <input class="number-input" type="number" min="8" max="50" value="10" id="characterAmountNumber">
-		      </div>
-
-		      <button type="submit" class="btn">Generate Password</button>
-		    </form>
-  		</div>
-  	</div>
+  <div class="container">
+    <div class="display">
+      <p id="pDisplay"></p>
+    </div>
+    <div class="passLen">
+      <div class="labelDiv">
+        <p>Password Length:</p>
+      </div>
+      <div class="slidecontainer">
+        <input type="range" min="10" max="50" value="15" class="slider" id="myRange">
+      </div>
+      <div class="showLen">
+        <p id="show">10</p>
+      </div>
+    </div>
+    <div class="gen">
+      <BUTTON class="btn" id="genBtn">GENERATE</BUTTON>
+    </div>
   </div>
 </body>
 </html>

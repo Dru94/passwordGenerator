@@ -1,26 +1,17 @@
-const display = document.getElementById('passwordDisplay');
-const passLength = document.getElementById('characterAmountNumber');
-const range = document.getElementById('characterAmountRange');
+import { pass } from './password.js';
 
-//sync range with input
-passLength.addEventListener('input', (e)=>{
-	range.value = e.target.value;
+const genBtn = document.getElementById("genBtn");
+const pDisplay = document.getElementById("pDisplay");
+
+let slider = document.getElementById("myRange");
+let output = document.getElementById("show");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+genBtn.addEventListener('click', ()=>{
+	pDisplay.innerHTML=pass(slider.value)
 });
-range.addEventListener('input', (e)=>{
-	passLength.value = e.target.value;
-});
-
-// generate lowercase letters
-exports.generatelCase = () =>{return String.fromCharCode(Math.floor(Math.random() * 26) + 97)};
-
-// generate uppercase letters
-exports.generateUCase = ()=>{return String.fromCharCode(Math.floor(Math.random() * 26) + 65)};
-
-// generate numbers
-exports.generateNumber = ()=>{return String.fromCharCode(Math.floor(Math.random() * 9) + 48)};
-
-// generateSymbols
-exports.generateSymbol = ()=>{
-	const s = '!@#$%^&*(){}[]=<>/.,|'
-	return s[Math.floor(Math.random() * s.length)]
-};
